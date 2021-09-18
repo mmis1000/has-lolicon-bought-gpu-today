@@ -1,0 +1,1 @@
+# has-lolicon-bought-gpu-today
