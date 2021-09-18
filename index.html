@@ -1,0 +1,452 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Has Lolicon bought GPU today?</title>
+    <style>
+        body,
+        html {
+            background: #1E1E2F;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 300;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline {
+            max-width: 1080px;
+            width: 100vw;
+            position: relative;
+            box-sizing: border-box;
+            padding: 3em 2em;
+        }
+
+        .card-line {
+            position: absolute;
+            left: calc(22px + 2em);
+            width: 4px;
+            top: calc(3em + 16px);
+            bottom: 0;
+            background: #27293D;
+        }
+
+        .card {
+            display: flex;
+            color: white;
+        }
+
+        .card:not(:last-child) {
+            margin-bottom: 2em;
+        }
+
+        .card-icon {
+            position: relative;
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 80px;
+            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .icon-item {
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 48px;
+        }
+
+        .icon-item i {
+            line-height: 48px;
+        }
+
+        .icon-item.blue {
+            background: #37f;
+        }
+
+        .icon-item.green {
+            color: #7f7;
+        }
+
+        .icon-item.red {
+            background: red;
+        }
+
+        .card-content {
+            position: relative;
+            flex-grow: 1;
+            flex-shrink: 1;
+            background: #27293D;
+            padding: 1em;
+            border-radius: 4px;
+            min-height: 100px;
+            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .card-content::after {
+            content: "";
+            display: block;
+            border: 16px solid transparent;
+            border-right-color: #27293D;
+
+            position: absolute;
+            right: calc(100% - 1px);
+            top: 16px;
+        }
+
+        .title {
+            margin: 0;
+        }
+
+        .text {
+            padding-left: 4px;
+        }
+
+        .text img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .time {
+            color: #777;
+            font-style: italic;
+        }
+
+        .data-table td {
+            padding-right: 16px;
+        }
+
+        .text-strike {
+            color: #aaa;
+            text-decoration: line-through;
+        }
+
+        .color-r {
+            color: red;
+        }
+
+        .color-g {
+            color: #7f7;
+        }
+
+        .color-b {
+            color: #37f;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+
+    <div class="wrapper">
+        <div class="timeline">
+            <div class="card-line"></div>
+            <div class="card">
+                <div class="card-icon processing">
+                    <div class="icon-item blue">
+                        <i class="fas fa-2x  fa-spinner fa-pulse"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h1 class="title">Has Lolicon bought
+                        <span class="color-r">G</span><span class="color-g">P</span><span class="color-b">U</span>
+                        today?
+                    </h1>
+                    <p class="text">
+                        <img src="https://i.imgur.com/3OuruOx.png" width="300" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td><span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>RTX3080</td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td id="day-status">2021/11/19 (2042 release date)</td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div id="timer" class="time">
+                        remaing 11d 4h 3m 11s
+                    </div>
+                </div>
+            </div>
+            <!--
+    <div class="card">
+      <div class="card-icon">
+        <div class="icon-item green">
+          <i class="fas fa-2x  fa-check"></i>
+        </div>
+      </div>
+      <div class="card-content">
+      </div>
+    </div>
+-->
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/EhExkSG.png" width="434" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>
+                                <span class="text-strike">
+                                    RTX3070
+                                </span>
+                                RTX3080
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                <span class="color-r">2021/2</span>
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2021/07/26
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/iNls92j.png" width="356" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>RTX3070</td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                <span class="text-strike">End of 2020</span>
+                                2021/02
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2020/12/26
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/vzpCZ4I.png" width="256" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>
+                                <span class="text-strike">
+                                    RTX3080
+                                </span>
+                                RTX3070
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                End of 2020
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2020/12/21
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/97Qtg02.png" width="263" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>
+                                RTX3080
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                <span class="text-strike">unknown</span>
+                                End of 2020
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2020/10/06
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/v0CS05W.png" width="266" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>
+                                <span class="text-strike">RTX3090</span>
+                                RTX3080
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                unknown
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2020/09/02
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        <img src="https://i.imgur.com/b13AQfk.png" width="289" alt=""><br>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td> <span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Esimated card</td>
+                            <td>
+                                RTX3090
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>
+                                unknown
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                    <div class="time">
+                        2020/09/02
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const estimate = new Date("2021-11-19T00:00:00+08:00")
+
+        const timerEl = document.getElementById('timer')
+        const dayStatusEl = document.getElementById('day-status')
+
+
+        function update() {
+            const timeRemain = estimate.getTime() - Date.now()
+            const positive = timeRemain > 0
+            const timeAbs = Math.abs(timeRemain)
+
+            const day = Math.floor(timeAbs / 86000 / 1000)
+            const r1 = timeAbs % (86000 * 1000)
+            const hour = Math.floor(r1 / 3600 / 1000)
+            const r2 = r1 % (3600 * 1000)
+            const minute = Math.floor(r2 / 60 / 1000)
+            const r3 = r2 % (60 * 1000)
+            const second = Math.floor(r3 / 1000)
+            const pad = i => i < 10 ? '' + i : '' + i
+
+            if (positive) {
+                timerEl.textContent = 'Remaining ' + pad(day) + 'd ' + pad(hour) + 'h ' + pad(minute) + 'm ' + pad(second) + 's'
+            } else {
+                timerEl.textContent = 'Over ' + pad(day) + 'd ' + pad(hour) + 'h ' + pad(minute) + 'm ' + pad(second) + 's'
+            }
+
+            if (!positive) {
+                timerEl.style.color = "red"
+                dayStatusEl.style.color = "red"
+            }
+
+            requestAnimationFrame(update)
+        }
+
+        update()
+    </script>
+</body>
+
+</html>
