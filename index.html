@@ -426,8 +426,8 @@
             const positive = timeRemain > 0
             const timeAbs = Math.abs(timeRemain)
 
-            const day = Math.floor(timeAbs / 86000 / 1000)
-            const r1 = timeAbs % (86000 * 1000)
+            const day = Math.floor(timeAbs / 86400 / 1000)
+            const r1 = timeAbs % (86400 * 1000)
             const hour = Math.floor(r1 / 3600 / 1000)
             const r2 = r1 % (3600 * 1000)
             const minute = Math.floor(r2 / 60 / 1000)
