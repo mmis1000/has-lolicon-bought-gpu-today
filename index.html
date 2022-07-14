@@ -189,6 +189,40 @@
                         today?
                     </h1>
                     <p class="text">
+                        <img src="https://cdn.discordapp.com/attachments/88111110519009280/997083051756638308/unknown.png" width="395" alt=""><br>
+                    </p>
+                    <table class="data-table">
+                        <tr>
+                            <td>Status</td>
+                            <td><span class="color-r">no</span> </td>
+                        </tr>
+                        <tr>
+                            <td>Target card</td>
+                            <td>
+                                <span class="text-strike">RTX4080?</span>
+                                RTX3080
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td id="day-status">
+                                <span class="text-strike">2022/12/31</span>
+                                2022/07/25
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="timer" class="time">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <div class="icon-item red">
+                        <i class="fas fa-2x  fa-times"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="text">
                         <img src="https://cdn.discordapp.com/attachments/88111110519009280/896049892785537024/unknown.png" width="307" alt=""><br>
                     </p>
                     <table class="data-table">
@@ -208,10 +242,12 @@
                             </td>
                         </tr>
                     </table>
-                    <div id="timer" class="time">
+                    <div class="time">
+                        2021/10/04
                     </div>
                 </div>
-            </div><div class="card">
+            </div>
+            <div class="card">
                 <div class="card-icon">
                     <div class="icon-item red">
                         <i class="fas fa-2x  fa-times"></i>
@@ -553,7 +589,7 @@
         </div>
     </div>
     <script>
-        const estimate = new Date("2022-12-31T23:59:59+08:00")
+        const estimate = new Date("2022-07-25T23:59:59+08:00")
 
         const timerEl = document.getElementById('timer')
         const dayStatusEl = document.getElementById('day-status')
